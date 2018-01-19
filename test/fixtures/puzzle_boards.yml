@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  puzzle: one
+  board: one
+
+two:
+  puzzle: two
+  board: two
