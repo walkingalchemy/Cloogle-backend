@@ -16,9 +16,12 @@
 #   Puzzle.create(word: word, hint: definition)
 # end
 
+# url = "https://raw.githubusercontent.com/doshea/nyt_crosswords/master/#{year}/#{month}/#{day}.json"
 
-board = Board.create(name: "board", width: 9, height: 9)
 
-puzzle = Puzzle.create(word: "word", hint: "hint")
+years = (1976..2010).to_a
+months = ["01","02","03","04","05","06","07","08","09","10", "11", "12"]
 
-PuzzleBoard.create(board: board, puzzle: puzzle)
+10.times do
+  Board.create(board_url: "https://raw.githubusercontent.com/doshea/nyt_crosswords/master/#{years.sample}/#{months.sample}/#{months.sample}.json")
+end
