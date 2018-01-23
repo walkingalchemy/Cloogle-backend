@@ -3,7 +3,8 @@ class CreateBoards < ActiveRecord::Migration[5.1]
     create_table :boards do |t|
       t.string :name
       t.string :layout, default: nil
-
+      t.integer :width
+      t.integer :height
       t.timestamps
     end
   end
