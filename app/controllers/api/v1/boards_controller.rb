@@ -6,6 +6,7 @@ class Api::V1::BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    render json: @board
+    @puzzles = @board.puzzles
+    render json: {board: @board, puzzles: @puzzles}
   end
 end

@@ -10,36 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119204351) do
+ActiveRecord::Schema.define(version: 20180123230041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "boards", force: :cascade do |t|
-    t.string "name"
-    t.string "layout"
-    t.integer "width"
-    t.integer "height"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "puzzle_boards", force: :cascade do |t|
-    t.bigint "puzzle_id"
+  create_table "board_users", force: :cascade do |t|
     t.bigint "board_id"
+    t.bigint "user_id"
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_puzzle_boards_on_board_id"
-    t.index ["puzzle_id"], name: "index_puzzle_boards_on_puzzle_id"
+    t.index ["board_id"], name: "index_board_users_on_board_id"
+    t.index ["user_id"], name: "index_board_users_on_user_id"
   end
 
-  create_table "puzzles", force: :cascade do |t|
-    t.string "word"
-    t.string "hint"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "boards", force: :cascade do |t|
+    t.string "title"
+    t.string "board_url"
   end
 
-  add_foreign_key "puzzle_boards", "boards"
-  add_foreign_key "puzzle_boards", "puzzles"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+  end
+
 end
