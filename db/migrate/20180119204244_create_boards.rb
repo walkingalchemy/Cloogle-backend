@@ -5,6 +5,7 @@ class CreateBoards < ActiveRecord::Migration[5.1]
       t.string :layout, default: nil
       t.integer :width
       t.integer :height
+
       t.timestamps
     end
   end
