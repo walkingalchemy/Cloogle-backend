@@ -4,6 +4,7 @@ class CreateBoardUsers < ActiveRecord::Migration[5.1]
       t.belongs_to :board
       t.belongs_to :user
       t.boolean :completed
+      t.string :progress, array: true
 
       t.timestamps
     end

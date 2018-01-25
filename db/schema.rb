@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180123230041) do
     t.bigint "board_id"
     t.bigint "user_id"
     t.boolean "completed"
+    t.string "progress", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_board_users_on_board_id"
