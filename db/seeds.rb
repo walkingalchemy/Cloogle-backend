@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'open-uri'
+require 'open-uri'
 # require 'json'
 # require 'nokogiri'
 
@@ -21,7 +21,14 @@
 
 years = (1976..2010).to_a
 months = ["01","02","03","04","05","06","07","08","09","10", "11", "12"]
+days = ["01","02","03","04","05","06","07","08","09","10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
 
-10.times do
-  Board.create(board_url: "https://raw.githubusercontent.com/doshea/nyt_crosswords/master/#{years.sample}/#{months.sample}/#{months.sample}.json", title:"#{months.sample}/#{months.sample}/#{years.sample}" )
+years.each do |year|
+  months.each do |month|
+    days.each do |day|
+      url = "https://raw.githubusercontent.com/doshea/nyt_crosswords/master/#{year}/#{month}/#{day}.json"
+      doc = JSON.parse(Nokogiri::HTML(open(url)))
+      Board.create(board_url: url, title: doc["title"].split("NY TIMES, ").last )
+    end
+  end
 end

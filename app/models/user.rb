@@ -3,4 +3,5 @@ class User < ApplicationRecord
   has_many :boards, through: :board_users
   validates :name, uniqueness: true
 
+
 end

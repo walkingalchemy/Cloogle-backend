@@ -18,4 +18,5 @@ class BoardUser < ApplicationRecord
     self.save
   end
 
+
 end
