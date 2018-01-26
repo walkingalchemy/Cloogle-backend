@@ -2,7 +2,6 @@ class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find_or_create_by(name:params[:name])
     @user_boards = @user.boards
-    # @non_user_boards = Board.all.reject {|board| board.user_ids.include?(@user.id)}
     @non_user_boards = Board.all - @user_boards
     render json: {user: @user, user_boards: @user_boards, non_user_boards: @non_user_boards}
   end
