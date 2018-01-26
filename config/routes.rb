@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :board_users, only: [:create]
       get "/board_users/:user_id/:board_id", to: 'board_users#show'
       patch "/board_users/:user_id/:board_id", to: 'board_users#update'
-      patch "/board_users/:user_id/:board_id/progress", to: 'board_users#update_progress'
+      patch "/board_users/progress/:user_id/:board_id", to: 'board_users#update_progress'
     end
   end
 

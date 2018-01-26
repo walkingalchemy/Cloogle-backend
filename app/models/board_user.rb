@@ -15,6 +15,7 @@ class BoardUser < ApplicationRecord
         el
       end
     end
+    self.save
   end
 
 end

@@ -28,17 +28,19 @@ class Api::V1::BoardUsersController < ApplicationController
 
  def update_progress
    @board_user = find_board_user
-
    if @board_user
-     @board_user.progress[params["index"]] = params["value"]
-     byebug
+     @board_user.progress[params["index"].to_i] = params["value"]
+     @board_user.save
+     render json: {message: "success"}
+   else
+      render json: {errors: @board_user.errors.full_messages}, status: 422
    end
  end
 
 
   private
    def board_user_params
-     params.permit(:user_id, :board_id, :completed)
+     params.permit(:user_id, :board_id, :completed, :progress)
    end
 
    def find_board_user
