@@ -5,7 +5,7 @@
 
 Cloogle is a web based crossword app allowing users to complete and save crosswords from a historical database of New York Times crossword puzzles [hosted here](https://github.com/doshea/nyt_crosswords).
 
-This is the repository for the Ruby on Rails backend that serves the JSON API. The frontend api repository resides at: [Cloogle-Backend](https://github.com/walkingalchemy/Cloogle-backend).
+This is the repository for the Ruby on Rails backend that serves the JSON API. The frontend api repository resides at: [Cloogle-Frontend](https://github.com/walkingalchemy/Cloogle-frontend).
 
 
 
