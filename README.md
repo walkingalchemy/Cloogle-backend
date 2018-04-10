@@ -7,8 +7,9 @@ Cloogle is a web based crossword app allowing users to complete and save crosswo
 
 This is the repository for the Ruby on Rails backend that serves the JSON API. The frontend api repository resides at: [Cloogle-Frontend](https://github.com/walkingalchemy/Cloogle-frontend).
 
-
-
+## Demo
+<a href="https://youtu.be/fZyNg0_bY18" target="_blank"><img src="http://img.youtube.com/vi/fZyNg0_bY18/0.jpg" 
+alt="Cloogle Thumbnail" width="240" height="180" border="10" /></a>
 
 ## Installing / Getting started
 
